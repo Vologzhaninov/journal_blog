@@ -1,0 +1,292 @@
+html, 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+/* =================
+    Typography 
+   ================= */
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+.last-article-header,
+.about-article-header {
+    line-height: 1.2;
+    letter-spacing: -0.05;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+main p {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+/* =================
+    Site Layout 
+   ================= */
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================= 
+    Header Layout 
+================= */
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 2em 2em 2em;
+}
+
+/* Logo styles */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+}
+
+.logo-img {
+    display: block;
+    width: 2em;
+    height: 2em;
+}
+
+.logo h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Navigation styles */
+nav ul {
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+    gap: 2em;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #141414;
+    font-size: 1rem;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #822f00;
+}
+
+/* ===============
+    Main Layout
+================ */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.last-article {
+    display: flex;
+    flex-direction: column;
+    background: #1e1e1e url("../images/article-image.png");
+    background-size: 100% auto;
+    color: white;
+    padding: 6em 2em 2em;
+}
+
+.last-article a {
+    text-decoration: none;
+    color: white;
+}
+
+.last-article-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.article-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+
+.article-date {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    order: -1;
+    margin-top: 1em;
+}
+
+.blog-article {
+    display: flex;
+    flex-direction: column;
+    color: #141414;
+    margin: 0 2em;
+}
+
+img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.blog-article a {
+    text-decoration: none;
+    color: #141414;
+}
+
+.blog-article.invisible {
+    display: none;
+}
+
+.recent-posts {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: -1em;
+}
+
+.view-more {
+    border: none;
+    background-color: transparent;
+    text-transform: capitalize;
+    text-decoration: underline;
+    color: #141414;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-bottom: 3em;
+}
+
+.view-more:hover,
+.view-more:focus {
+    color: #822f00;
+}
+
+/* =================
+    Footer Layout
+================= */
+.site-footer {
+    display: flex;
+    justify-content: center;
+    background-color: #1e1e1e;
+    color: white;
+    text-align: center;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.site-footer span {
+    display: block;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* =================
+    Media Queries
+================= */
+
+@media (min-width: 768px) {
+
+    .blog-article.invisible {
+        display: flex;
+    }
+
+    /* main grid */
+    main {
+        display: grid;
+        gap: 3em 1em;
+        background-color: #fafafa;
+        grid-template-columns: 1em repeat(3, 1fr) 1em;
+        grid-template-areas:
+            "last last last last last"
+            ".... blg1 blg2 blg3 ...."
+            ".... blg4 blg5 blg6 ...."
+            "view view view view view";
+    } 
+
+    .blog-article {
+        margin: 0;
+    }
+
+    .last-article {
+        grid-area: last;
+        padding: 10em 10em 4em 2em;
+    }
+
+    .blog-one {
+        grid-area: blg1;
+    } 
+
+    .blog-two {
+        grid-area: blg2;
+    } 
+
+    .blog-three {
+        grid-area: blg3;
+    } 
+
+    .blog-four {
+        grid-area: blg4;
+    } 
+
+    .blog-five {
+        grid-area: blg5;
+    } 
+
+    .blog-six {
+        grid-area: blg6;
+    }
+
+    .view-more {
+        grid-area: view;
+    }
+
+    .logo img {
+        width: 2.2em;
+        height: 2.2em;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+    }
+
+    .recent-posts,
+    .current-article h3,
+    .about-article h3 {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .last-article {
+        padding: 23em 25em 4em 2em;
+    }
+    
+}

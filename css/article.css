@@ -1,0 +1,46 @@
+
+main {
+    padding-top: 1em;
+    padding-bottom: 5em;
+}
+
+.current-article h2 {
+    margin-top: 0.5em; 
+}
+
+.current-article p {
+    margin: 1em 0; 
+}
+
+.current-article-part {
+    padding: 0 2em;
+}
+
+.article-img {
+    box-sizing: border-box;
+    padding: 2em; 
+}
+
+.view-more {
+    display: none;
+}
+
+/* =================
+    Media Queries
+================= */
+
+@media (min-width: 768px) {
+    
+    main {
+        padding-top: 4em;
+        padding-bottom: 0;
+    } 
+
+    .current-article {
+        grid-column: span 5; /* main grid */
+    }
+
+    .current-article-part {
+        padding: 0 6em;
+    }
+}
